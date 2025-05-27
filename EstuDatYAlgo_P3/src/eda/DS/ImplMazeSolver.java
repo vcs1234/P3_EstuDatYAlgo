@@ -1,6 +1,7 @@
 package eda.DS;
 
 import java.util.List;
+
 import eda.ADT.interMazeSolver.MazeSolver;
 
 public class ImplMazeSolver implements MazeSolver {

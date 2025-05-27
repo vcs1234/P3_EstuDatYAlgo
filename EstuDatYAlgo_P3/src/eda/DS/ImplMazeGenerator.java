@@ -28,6 +28,8 @@ public class ImplMazeGenerator implements MazeGenerator {
 		    }
 		}
 		
+		m(vi,vj,n,mapaCeldas);
+		
 		return n;
 	}
 	
@@ -45,23 +47,23 @@ public class ImplMazeGenerator implements MazeGenerator {
 
 	        switch (r) {
 	            case 0: // arriba
-	                System.out.println("Dirección: arriba");
+	                //System.out.println("Dirección: arriba");
 	                auxi = i - 1;
 	                break;
 	            case 1: // derecha
-	                System.out.println("Dirección: derecha");
+	                //System.out.println("Dirección: derecha");
 	                auxj = j + 1;
 	                break;
 	            case 2: // abajo
-	                System.out.println("Dirección: abajo");
+	                //System.out.println("Dirección: abajo");
 	                auxi = i + 1;
 	                break;
 	            case 3: // izquierda
-	                System.out.println("Dirección: izquierda");
+	                //System.out.println("Dirección: izquierda");
 	                auxj = j - 1;
 	                break;
 	            default:
-	                System.out.println("Valor inesperado: " + r);
+	                //System.out.println("Valor inesperado: " + r);
 	                break;
 	        }
 	        // Validamos que la nueva posición está dentro del laberinto y no ha sido visitada
@@ -77,6 +79,4 @@ public class ImplMazeGenerator implements MazeGenerator {
 	    // Llamada recursiva
 	    m(auxi, auxj, n, mapaCeldas);
 	}
-
-
 }
