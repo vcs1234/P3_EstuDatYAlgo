@@ -1,5 +1,7 @@
 package eda.DS;
 
+import java.util.Arrays;
+
 import eda.EXCEPTIONS.fuera;
 
 public class Maze {
@@ -47,16 +49,23 @@ public class Maze {
 	}
 	
 	public int[] move(int [] p, int vi, int vj) throws fuera {// Para moverse dento del maze.
-		if(p[0] + vi> rows || p[0] + vi <0) {
-			throw new fuera();
-		}else {p[0] += vi;}
-		if(p[1]+vj>cols || p[1] + vi < 0) {
-			throw new fuera();
-		}else {
-			p[1] += vj;
-		}
-		return p;
-		
+		int[] aux = new int[2];
+		aux = Arrays.copyOf(p, 2);
+		//Creamos un nuevo array porque sino modifica el antiguo p(pos)
+		//Recordatorio p(pos) es una posición ya visitada.
+		 if (aux[0] + vi >= rows || aux[0] + vi < 0) {
+		        throw new fuera();
+		    } else {
+		        aux[0] += vi;
+		    }
+
+		    if (aux[1] + vj >= cols || aux[1] + vj < 0) {
+		        throw new fuera();
+		    } else {
+		        aux[1] += vj;
+		    }
+
+		    return aux;
 	}
 	
 	public void p() {
