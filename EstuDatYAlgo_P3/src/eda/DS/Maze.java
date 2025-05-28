@@ -19,6 +19,7 @@ public class Maze {
 			for (int j = 0; j < cols; j++)
 				data[i][j] = WALL;
 	}
+	
 	public void mod (int r, int c) {
 		data[r][c] = EMPTY; 
 	}
