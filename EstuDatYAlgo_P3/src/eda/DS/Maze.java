@@ -1,5 +1,7 @@
 package eda.DS;
 
+import eda.EXCEPTIONS.fuera;
+
 public class Maze {
 	public static final int EMPTY = 0;
 	public static final int WALL = 1;
@@ -18,6 +20,7 @@ public class Maze {
 	public void mod (int r, int c) {
 		data[r][c] = EMPTY; 
 	}
+	
 	public String getInicio() {
 		return inicio;
 	}
@@ -41,6 +44,19 @@ public class Maze {
 	}
 	public void setCols(int cols) {
 		this.cols = cols;
+	}
+	
+	public int[] move(int [] p, int vi, int vj) throws fuera {// Para moverse dento del maze.
+		if(p[0] + vi> rows || p[0] + vi <0) {
+			throw new fuera();
+		}else {p[0] += vi;}
+		if(p[1]+vj>cols || p[1] + vi < 0) {
+			throw new fuera();
+		}else {
+			p[1] += vj;
+		}
+		return p;
+		
 	}
 	
 	public void p() {
